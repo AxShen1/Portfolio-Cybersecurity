@@ -15,3 +15,16 @@ Practical exercises, algorithms, and automation scripts developed during my Goog
 * **`device_trust_verifier.py`**: Zero-Trust Device & Identity Matching Algorithm utilizing parallel lists and nested logic.
 * **`IP_Threat_Scanner.py`**: Iterative network log scanner identifying unauthorized IP addresses and simulating SOC incident escalation.
 * **`python_debugging_suite.py`**: QA Suite demonstrating fixes for Syntax, Runtime, and Logic errors in security automation scripts.
+
+### 2. [Personal Projects & Threat Detection](./Personal-Projects)
+Independent cybersecurity initiatives, post-mortems, and detection engineering labs I've built to expand my technical horizons beyond guided coursework.
+
+## 🛠️ Technical Skills & Tools Stack
+* **Languages & Scripting:** Python 3 (File I/O, RegEx, Data Structures, Automation), Bash, javascript.
+* **Security Operations:** SIEM Alert Triage, Vulnerability Management, Log Analysis, Phishing Analysis.
+* **Incident Response:** NIST IR Lifecycle, Root Cause Analysis (RCA), Threat Hunting, AI-Assisted Triage.
+* **Networking & Protocols:** TCP/IP, DNS, VPN, Firewalls, OSI Model, Zero-Trust Architecture.
+* **Compliance & Governance:** ISO 27001, Information Security Management Systems (ISMS), Risk Assessment.
+
+## 📬 Contact
+I am always open to learning and connecting with other cybersecurity professionals. Feel free to reach out to me
