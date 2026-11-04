@@ -1,0 +1,117 @@
+# 🐧 Linux Incident Triage & Log Inspection Lab
+
+## Incident Metadata
+| Parameter | Value / Details |
+| :--- | :--- |
+| **Analyst Name** | Security Analyst (Tier 1 / SOC) |
+| **Date & Time** | 2026-11-04 20:00 UTC |
+| **Severity Level** | **Medium** (Potential Unauthorized Account Creation & Auth Failures) |
+| **Target Host** | Linux Server (Headless / CLI-only Environment) |
+| **Investigation Scope** | `/home/analyst`, `/reports/users`, `/logs/server_logs.txt` |
+| **Incident Status** | Triage Phase Completed / Pending Containment Approval |
+
+---
+
+## Scenario Overview
+Zadanie te dotyczyło symulacji badania potencjalnego incydentu bezpieczeństwa na produkcyjnym serwerze Linux działającym w trybie bez interfejsu graficznego (headless). Celem analizy jest przeprowadzenie wstępnego rozpoznania środowiska (triage), audyt struktury katalogów i kont użytkowników (działy IT oraz HR) w odniesieniu do zatwierdzonych zgłoszeń zmian, a także wyekstrahowanie pierwszych wektorów błędów i anomalii z plików logów systemowych.
+
+---
+
+## Executive Summary & Key Findings
+Podczas fazy wstępnego triage'u zidentyfikowano następujące istotne zdarzenia:
+
+1. **Unapproved Account Creation:**
+   * W pliku `/reports/users/Q1_added_users.txt` wykryto obecność konta użytkownika `temp_admin_it`, dla którego brakuje zatwierdzenia w procedurze Change Management (HR / IT Ticketing System).
+2. **Authentication Anomaly & Brute Force Indicators:**
+   * W analizie pierwszych wpisów pliku `/logs/server_logs.txt` wykryto sekwencję komunikatów ostrzegawczych (`[WARNING]`) oraz nieudanych prób logowania SSH pochądzących z powtarzającego się adresu IP `192.168.1.105`.
+3. **Privilege & Scope Inspection:**
+   * Konto `analyst` posiada uprawnienia do odczytu wrażliwych raportów w katalogu `/reports/users`, co umożliwiło sprawne przeprowadzenie korelowania tożsamości.
+
+---
+
+## Investigation Methodology & Execution Steps
+
+### Phase 1: Directory & Environment Reconnaissance
+Wykonano wstępną identyfikację kontekstu wykonywania poleceń oraz określenie uprawnień i ukrytych plików w bieżącym katalogu roboczym.
+* **Command:** `pwd`
+  * *Purpose:* Potwierdzenie bieżącej ścieżki w strukturze drzewa katalogów (oczekiwana: `/home/analyst`).
+* **Command:** `ls -la`
+  * *Purpose:* Wyświetlenie wszystkich plików (w tym ukrytych dotfiles, np. `.bashrc`, `.ssh/`) wraz z uprawnieniami POSIX, właścicielem i grupą.
+
+### Phase 2: Access Control & Identity Audit
+Przeprowadzono weryfikację nowo utworzonych kont użytkowników w celu wykluczenia nieautoryzowanej ekspansji uprawnień (Privilege Escalation / Rogue Account Creation).
+* **Command:** `cd /reports/users`
+* **Command:** `cat Q1_added_users.txt`
+  * *Purpose:* Odczyt pełnej rejestracji poświadczeń i identyfikatorów z pierwszego kwartału.
+* **Command:** `grep -v "#" Q1_added_users.txt`
+  * *Purpose:* Przefiltrowanie komentarzy nagłówkowych i wydobycie czystych wpisów dotyczących tożsamości.
+
+### Phase 3: Initial Log Inspection & Triage
+Analiza logów zdarzeń systemowych pod kątem wczesnych sygnałów naruszenia ciągłości działania lub nieautoryzowanego dostępu.
+* **Command:** `head -n 10 /logs/server_logs.txt`
+  * *Purpose:* Szybki odczyt pierwszych 10 linii pliku logu do oceny struktury znacznika czasu (timestamp format) oraz typu zdarzeń.
+
+### Phase 4: Advanced Log Filtering & Event Correlation
+Pogłębienie analizy pliku logu za pomocą filtrowania wzorców tekstowych.
+* **Command:** `grep -i "warning\|error\|failed" /logs/server_logs.txt`
+  * *Purpose:* Wyizolowanie krytycznych komunikatów i błędów uwierzytelniania.
+* **Command:** `tail -n 20 /logs/server_logs.txt`
+  * *Purpose:* Analiza najnowszych zdarzeń wpisanych do logu (aktualna aktywność).
+* **Command:** `wc -l /logs/server_logs.txt`
+  * *Purpose:* Sprawdzenie całkowitego wolumenu logów w celu oceny zakresu potencjalnej automatyzacji analizy.
+
+### Phase 5: Live System State Triage (Volatile Data Audit)
+Inspekcja aktualnego stanu uruchomionych procesów i aktywnych połączeń sieciowych.
+* **Command:** `ps aux | grep -v "root"`
+  * *Purpose:* Weryfikacja nieuprawnionych procesów uruchomionych przez użytkowników nieuprzywilejowanych.
+* **Command:** `ss -tulpn`
+  * *Purpose:* Identyfikacja otwartych portów nasłuchujących oraz aktywnych gniazd sieciowych.
+
+---
+
+## Technical Command Reference
+
+| Command | Category | Analytical & Investigative Purpose |
+| :--- | :--- | :--- |
+| `pwd` | Reconnaissance | Weryfikacja kontekstu ścieżki bieżącego katalogu roboczego |
+| `ls -la` | Reconnaissance | Wyświetlenie ukrytych plików, struktur katalogów oraz uprawnień POSIX |
+| `cd <path>` | Navigation | Zmiana bieżącego katalogu w drzewie plików Linux |
+| `cat Q1_added_users.txt` | Content Inspection | Odczyt zawartości pliku raportu z bazą dodanych kont |
+| `head -n 10 server_logs.txt` | Log Triage | Odczyt nagłówka pliku logu (10 linii) w celu weryfikacji struktury i anomalii |
+| `tail -n 20 server_logs.txt` | Log Triage | Odczyt stopki pliku logu (20 linii) w celu oceny najnowszej aktywności |
+| `grep -i "warning" log.txt` | Log Filtering | Wyszukiwanie fraz "warning" bez uwzględniania wielkości liter |
+| `wc -l server_logs.txt` | Metrics | Zliczenie liczby wierszy w pliku logu (ocena wolumenu danych) |
+| `sha256sum <file>` | Forensics | Wygenerowanie kryptograficznej sumy kontrolnej w celu zachowania integralności dowodu |
+| `ss -tulpn` | Network Audit | Wyświetlenie aktywnych gniazd sieciowych i powiązanych PID procesów |
+
+---
+
+## Evidence Integrity & Chain of Custody
+Aby zapewnić niezaprzeczalność i integralność zebranych dowodów w celach śledczych, należy niezwłocznie po zakończeniu analizy wygenerować sumy kontrolne SHA-256 dla badanych plików.
+
+```bash
+# Zabezpieczenie integralności plików dowodowych
+sha256sum /reports/users/Q1_added_users.txt > /reports/users/Q1_added_users.txt.sha256
+sha256sum /logs/server_logs.txt > /logs/server_logs.txt.sha256
+
+# Weryfikacja spójności pliku w późniejszym etapie
+sha256sum -c /logs/server_logs.txt.sha256
+```
+
+---
+
+## Containment & Remediation Plan
+
+1. **Immediate Account Containment:**
+   * Zablokowanie konta `temp_admin_it` poprzez ustawienie powłoki uniemożliwiającej logowanie lub zmianę stanu konta w pliku `/etc/shadow`:
+     ```bash
+     sudo usermod -s /sbin/nologin temp_admin_it
+     sudo passwd -l temp_admin_it
+     ```
+2. **Network Isolation / Firewall Rule Creation:**
+   * Zablokowanie nieznanego adresu IP `192.168.1.105` generującego błędy uwierzytelniania na zaporze ogniowej (`iptables` / `nftables`):
+     ```bash
+     sudo iptables -A INPUT -s 192.168.1.105 -j DROP
+     ```
+3. **Log Retention & SIEM Ingestion:**
+   * Przekazanie zgromadzonych logów `/logs/server_logs.txt` do centralnego systemu SIEM w celu przeprowadzenia korelacji ze zdarzeniami z innych urządzeń sieciowych.
