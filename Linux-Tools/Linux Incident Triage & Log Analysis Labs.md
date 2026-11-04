@@ -21,7 +21,6 @@
   - [4. File System Hygiene & CLI Editing](#4-file-system-hygiene--cli-editing)
 - [Evidence Integrity & Forensics](#-evidence-integrity--forensics)
 - [Containment & Remediation Plan](#-containment--remediation-plan)
-- [Author & Acknowledgments](#-author--acknowledgments)
 
 ---
 
