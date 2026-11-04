@@ -1,4 +1,4 @@
-# 🛡️ Cybersecurity & SOC Automation Portfolio
+# 🛡️ Cybersecurity Portfolio
 
 I am a passionate aspiring cybersecurity professional. Coming from a strong background in internal security, criminology, and compliance (ISO 27001 Auditor), this repository is a living documentation of my technical journey. 
 
