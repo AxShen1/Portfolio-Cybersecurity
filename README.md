@@ -1,7 +1,5 @@
 # 🛡️ Cybersecurity & SOC Automation Portfolio
 
-**Bridging the gap between Security Governance and Technical Operations.** 
-
 I am a passionate aspiring cybersecurity professional. Coming from a strong background in internal security, criminology, and compliance (ISO 27001 Auditor), this repository is a living documentation of my technical journey. 
 
 I use this space to showcase my personal projects, hands-on labs, and the technical skills I am actively learning. The projects below reflect my ongoing "Cybersecurity Journey", highlighting my practical focus on Python automation, log parsing, detection engineering, and incident response.
