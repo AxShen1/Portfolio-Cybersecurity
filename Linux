@@ -1,0 +1,17 @@
+# 🐧 Linux Incident Triage & Log Inspection Lab
+
+## Scenario Overview
+Symulacja badania incydentu bezpieczeństwa na serwerze Linux bez interfejsu graficznege. Zadanie te obejmowało audyt struktury katalogów `/home/analyst`, weryfikację nowo dodanych kont użytkowników w dziale IT oraz inspekcję pierwszych wektorów błędów w logach serwera.
+
+## Investigation Steps
+1. **Directory Reconnaissance:** Identyfikacja bieżącego środowiska i struktury plików za pomocą poleceń `pwd` oraz `ls -la`.
+2. **Access Control Audit:** Nawigacja do `/reports/users` i inspekcja pliku `Q1_added_users.txt` w celu weryfikacji tożsamości pracowników (analityka kont działu IT i HR).
+3. **Log File Inspection:** Zbadanie nagłówków pliku `/logs/server_logs.txt` poleceniem `head -n 10` w celu wychwycenia aktywnych komunikatów ostrzegawczych (Warning messages).
+
+## Command Reference
+| Command | Analytical Purpose |
+| :--- | :--- |
+| `pwd` / `cd` | Weryfikacja kontekstu ścieżki i nawigacja po systemie plików |
+| `ls -la` | Wyświetlenie ukrytych plików i uprawnień |
+| `cat Q1_added_users.txt` | Odczyt pełnego rejestru poświadczeń i identyfikatorów pracowników |
+| `head -n 10 server_logs.txt` | Szybki triage pierwszych 10 linii logu pod kątem anomalii |
