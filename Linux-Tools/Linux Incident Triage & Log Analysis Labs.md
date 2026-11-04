@@ -5,7 +5,7 @@
 ![Course](https://img.shields.io/badge/Certificate-Google%20Cybersecurity-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-Dokumentacja laboratoryjna oraz zestawienie praktycznych procedur analizy incydentów i filtrowania logów w środowisku **Debian Linux (CLI/Headless)**, zrealizowane na potrzeby profilu SOC / Security Analyst.
+
 
 ---
 
@@ -27,7 +27,7 @@ Dokumentacja laboratoryjna oraz zestawienie praktycznych procedur analizy incyde
 
 ## 🎯 Scenario Overview
 
-Symulacja badania incydentu bezpieczeństwa na produkcyjnym serwerze Linux. Celem laboratorium było przeprowadzenie rozpoznania środowiska (triage), audyt struktury katalogów `/home/analyst`, weryfikacja autoryzacji nowo dodanych kont użytkowników (działy IT oraz HR) w plikach raportowych `/reports/users` oraz wyekstrahowanie pierwszych wektorów błędów z dziennika `/logs/server_logs.txt`.
+Zadanie, które polegało na symulacji badania incydentu bezpieczeństwa na produkcyjnym serwerze Linux. Celem laboratorium było przeprowadzenie rozpoznania środowiska (triage), audyt struktury katalogów `/home/analyst`, weryfikacja autoryzacji nowo dodanych kont użytkowników (działy IT oraz HR) w plikach raportowych `/reports/users` oraz wyekstrahowanie pierwszych wektorów błędów z dziennika `/logs/server_logs.txt`.
 
 ---
 
@@ -161,7 +161,3 @@ sha256sum -c /logs/server_logs.txt.sha256
 
 ---
 
-## 👤 Author & Acknowledgments
-
-* **Notes & Labs:** Zrealizowane na podstawie materiałów z kursu **Google Cybersecurity Certificate**.
-* **Repository Owner:** Security Analyst Portfolio Project.
