@@ -19,7 +19,7 @@ echo "[*] Step 2: Calculating SOC Alert Baseline (False Positive Triage)..."
 TOTAL_ALERTS=32
 ACTIONABLE_ALERTS=8
 
-# Obliczenie False Positives w Bashu (odpowiednik ćwiczenia z laba)
+
 FALSE_POSITIVES=$(expr $TOTAL_ALERTS - $ACTIONABLE_ALERTS)
 echo "    Total Alerts Received : $TOTAL_ALERTS"
 echo "    True Positives (Action): $ACTIONABLE_ALERTS"
