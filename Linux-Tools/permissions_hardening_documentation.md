@@ -5,7 +5,7 @@
 [![Compliance: ISO 27001](https://img.shields.io/badge/Compliance-ISO%2FIEC%2027001%20A.8.2-green.svg)](#)
 [![Framework: NIST SP 800-53](https://img.shields.io/badge/Framework-NIST%20AC--6-orange.svg)](#)
 
-Dokumentacja laboratoryjna oraz automatyzacja procedur zarządzania uprawnieniami **Discretionary Access Control (DAC)** w systemie Linux. Projekt skupia się na identyfikacji błędnej konfiguracji bitów dostępności oraz wdrożeniu **Zasady Najmniejszych Uprawnień (Principle of Least Privilege - PoLP)** w środowisku zespołu badawczego.
+
 
 ---
 
@@ -22,7 +22,7 @@ Dokumentacja laboratoryjna oraz automatyzacja procedur zarządzania uprawnieniam
 
 ## 📌 Project Overview
 
-Błędnie skonfigurowane bity uprawnień do plików i katalogów w systemach uniksowych stanowią krytyczny wektor nieautoryzowanego ujawnienia danych (*Information Disclosure*) oraz eskalacji uprawnień (*Privilege Escalation*). 
+Zadanie obejmowało błędnie skonfigurowane bity uprawnień do plików i katalogów w systemach uniksowych stanowią krytyczny wektor nieautoryzowanego ujawnienia danych (*Information Disclosure*) oraz eskalacji uprawnień (*Privilege Escalation*). 
 
 Projekt obejmuje:
 1. Audyt struktury projektowej w katalogu `/home/researcher2/projects`.
