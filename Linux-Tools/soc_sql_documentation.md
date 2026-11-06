@@ -5,7 +5,7 @@
 [![Role: SOC L1](https://img.shields.io/badge/Role-SOC%20Analyst-red.svg)](#)
 
 ## 📌 Overview
-A set of ready-to-use SQL queries for SOC (L1) analysts, covering alert triage, incident reconstruction, asset management and threat hunting. All queries live in a single file: [`soc_sql_playbook.sql`](soc_sql_playbook.sql). The scripts are compatible with **MariaDB / MySQL** and can serve as templates for SIEM / SOAR systems that support SQL-like syntax.
+A set of ready-to-use SQL queries for SOC (L1) analysts, covering alert triage, incident reconstruction, asset management and threat hunting I did for my Cybersecurity Certificate. The scripts are compatible with **MariaDB / MySQL** and can serve as templates for SIEM / SOAR systems that support SQL-like syntax.
 
 ## 🗄️ Data Model
 | Table | Key columns |
@@ -52,9 +52,4 @@ mysql -u <user> -p <database_name> < soc_sql_playbook.sql
 ```
 Queries can also be run one at a time in the `mysql` console or in a SIEM tool with SQL support.
 
-## 📁 Repository Structure
-```
-.
-├── README.md              # documentation
-└── soc_sql_playbook.sql   # all queries (5 parts)
 ```
