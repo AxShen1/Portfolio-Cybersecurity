@@ -13,7 +13,7 @@ A practical risk assessment for a large commercial bank, carried out as a securi
 - **Location:** Central European country, stable socioeconomic conditions, low violent crime.
 - **People:** ~25,000 on-premise employees across many branches and ~5,000 remote/hybrid employees managing central IT.
 - **Customers:** ~11,000,000 individual accounts and ~500,000 commercial/corporate accounts.
-- **Visibility:** Marketed through professional sports leagues (e.g. Ekstraklasa) and local business partners, so the brand is highly recognisable.
+- **Visibility:** Marketed through professional sports leagues and local business partners, so the brand is highly recognisable.
 - **Regulation:** Strict requirements (KNF, European Central Bank) to secure data and funds and hold enough cash and liquid assets every day.
 
 ## 🧮 Method
