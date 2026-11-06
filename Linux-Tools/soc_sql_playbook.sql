@@ -2,7 +2,7 @@
 -- SOC SQL Playbook: Alert Tuning, Timeline Reconstruction, Asset Scoping,
 --                   Threat Hunting & Data Correlation
 -- DBMS: MariaDB / MySQL
--- Tables: log_in_attempts, employees, machines (columns described in README.md)
+-- Tables: log_in_attempts, employees, machines (columns described in soc_sql_documentation.md)
 -- ==============================================================================
 
 
