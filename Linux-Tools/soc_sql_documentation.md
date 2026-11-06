@@ -1,4 +1,4 @@
-# 🛡️ SOC SQL Playbook – Alert Tuning, Timeline Reconstruction & Threat Correlation
+# 🛡️ SOC SQL Playbook - Alert Tuning, Timeline Reconstruction & Threat Correlation
 
 [![Language: SQL](https://img.shields.io/badge/Language-SQL-blue.svg)](#)
 [![DBMS: MariaDB / MySQL](https://img.shields.io/badge/DBMS-MariaDB%20%2F%20MySQL-orange.svg)](#)
