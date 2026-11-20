@@ -3,7 +3,7 @@
 Welcome! This repository collects everything I build while learning cybersecurity: hands-on labs, scripts, cheat sheets, playbooks and write-ups. It's a living record of my progress, and it grows as I learn.
 
 ## 🌱 About me and this repo
-I'm a beginner, currently working through the **Google Cybersecurity Professional Certificate** plus my own practice. I'm still learning, so some solutions may not be the most elegant or complete. I try to explain what I did and why, and to note where I found problems or made mistakes. Suggestions and corrections are very welcome (issues or pull requests).
+I'm a beginner. I'm still learning, so some solutions may not be the most elegant or complete. I try to explain what I did and why, and to note where I found problems or made mistakes. Suggestions and corrections are very welcome (issues or pull requests).
 
 <!-- Optional: add one or two sentences about your background here, only what you are comfortable sharing publicly and can back up. -->
 
