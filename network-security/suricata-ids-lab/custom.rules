@@ -1,0 +1,17 @@
+# ==============================================================================
+# custom.rules - Suricata custom detection rule (lab exercise)
+# Format: action protocol src_ip src_port -> dst_ip dst_port (options)
+# ==============================================================================
+
+# Active rule: alert on any outbound HTTP GET from the home network.
+# Useful as a baseline for visibility into web traffic leaving the network;
+# on its own it is noisy and not a reliable indicator of malicious activity.
+alert http $HOME_NET any -> $EXTERNAL_NET any (msg:"GET on wire"; flow:established,to_server; content:"GET"; http_method; sid:12345; rev:3;)
+
+# ------------------------------------------------------------------------------
+# Reference examples (commented out - NOT run in the lab)
+# ------------------------------------------------------------------------------
+
+# 'pass' rule: let a specific trusted host through. Suricata evaluates rules in the
+# order pass -> drop -> reject -> alert, so 'pass' can override other rules.
+# pass http 172.17.0.77 any -> $EXTERNAL_NET any (msg:"BAD USER-AGENT"; flow:established,to_server; content:!"Mozilla/5.0"; http_user_agent; sid:12365; rev:1;)
