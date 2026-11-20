@@ -1,35 +1,47 @@
 # 🛡️ Cybersecurity Portfolio
 
-I am a passionate aspiring cybersecurity professional. Coming from a strong background in internal security, criminology, and compliance (ISO 27001 Auditor), this repository is a living documentation of my technical journey. 
+Welcome! This repository collects everything I build while learning cybersecurity: hands-on labs, scripts, cheat sheets, playbooks and write-ups. It's a living record of my progress, and it grows as I learn.
 
-I use this space to showcase my personal projects, hands-on labs, and the technical skills I am actively learning. The projects below reflect my ongoing "Cybersecurity Journey", highlighting my practical focus on Python automation, log parsing, detection engineering, and incident response.
+## 🌱 About me and this repo
+I'm a beginner, currently working through the **Google Cybersecurity Professional Certificate** plus my own practice. I'm still learning, so some solutions may not be the most elegant or complete. I try to explain what I did and why, and to note where I found problems or made mistakes. Suggestions and corrections are very welcome (issues or pull requests).
 
----
+<!-- Optional: add one or two sentences about your background here, only what you are comfortable sharing publicly and can back up. -->
 
-## 📂 My Cybersecurity Journey & Projects
+## ⚠️ Disclaimer
+- Everything here is **my own work and notes from training labs**. 
+- Lab data (logs, captures, user lists) and course materials are **not** reproduced. Where a scenario involves an organisation, it is fictional or used only as a case study, and numbers are assumptions.
+- Scripts are for learning. Run them only on systems you own or are authorised to test, ideally in a VM. Some change files, users or permissions; their READMEs say so.
 
-Practical exercises, algorithms, and automation scripts developed during my ongoing education (including the Google Cybersecurity Professional Certificate) and independent studies. These projects demonstrate my foundational SOC analyst skills.
+## 📂 What's inside
+| Area | Project | What it is |
+|---|---|---|
+| 🐍 **Python** | [Python for Security Analysts](python/python-for-security-analysts/) | 11 labs: conditionals, loops, functions, strings, regex, file handling, debugging, applied to security scenarios |
+| 🐧 **Linux & Bash** | [Incident triage & log analysis](linux-bash/incident-triage-and-log-analysis/) | Navigation, `grep` and pipes, evidence hashing, audit and setup scripts |
+| | [CLI recon toolkit](linux-bash/cli-recon-toolkit/) | `whatis` / `man` / `apropos` wrapper for "verify before you execute" |
+| | [Permissions hardening](linux-bash/permissions-hardening/) | Finding and fixing excessive `chmod` permissions (least privilege) |
+| | [IAM user lifecycle](linux-bash/iam-lifecycle-manager/) | Onboarding to offboarding with `useradd`/`usermod`/`userdel` (dry run by default) |
+| | [Workspace sanitizer](linux-bash/workspace-sanitizer/) | Safe cleanup script that records what it did |
+| | [Crypto toolkit](linux-bash/linux-crypto-toolkit/) | Caesar cipher and AES-256 (OpenSSL) encrypt/decrypt, with command cheat sheet |
+| | [File integrity lab](linux-bash/linux-file-integrity-lab/) | Hash comparison (SHA-256) and byte-level diff to detect tampering |
+| 🌐 **Network security** | [Wireshark PCAP analysis](network-security/wireshark-pcap-analysis/) | Display filters and a filter cheat sheet |
+| | [tcpdump packet capture](network-security/tcpdump-packet-capture-lab/) | Capturing and reading traffic from the CLI, with command reference |
+| | [Suricata IDS](network-security/suricata-ids-lab/) | A custom rule, `fast.log`, and `eve.json` analysis with `jq` |
+| 🗄️ **SQL** | [SOC SQL playbook](sql/soc-sql-playbook/) | Queries for alert triage, timelines, asset lookups and threat hunting |
+| 🚨 **Incident response & GRC** | [Phishing response playbook](incident-response-and-grc/phishing-incident-response-playbook/) | Alert triage, IoC analysis, ticket and escalation decision |
+| | [E-commerce breach report review](incident-response-and-grc/ecommerce-breach-final-report-review/) | Post-incident review of a forced-browsing data breach, with a reusable template |
+| | [Bank risk register](incident-response-and-grc/bank-risk-register/) | Likelihood × severity risk scoring for a fictional bank |
 
-* **`soc-ai-log-investigation.md`**: AI-Assisted Threat Hunting & Log Triage using Gemini/NotebookLM to detect data exfiltration and mitigate Indirect Prompt Injection.
-* **`ECommerce_Data_Theft_Final_Report.md`**: A formal Incident Response Post-Mortem Report detailing a data breach caused by Forced Browsing, including Root Cause Analysis (RCA).
-* **`log_regex_extractor.py`**: Automated Log Parsing & IoC Extraction via Regular Expressions (`re` module).
-* **`allow_list_updater.py`**: Automated Access Control List (ACL) Updater handling file I/O operations.
-* **`device_trust_verifier.py`**: Zero-Trust Device & Identity Matching Algorithm utilizing parallel lists and nested logic.
-* **`IP_Threat_Scanner.py`**: Iterative network log scanner identifying unauthorized IP addresses and simulating SOC incident escalation.
-* **`python_debugging_suite.py`**: QA Suite demonstrating fixes for Syntax, Runtime, and Logic errors in security automation scripts.
-* **`custom.rules`**: Suricata IDS custom signatures engineered to detect anomalous outbound HTTP GET requests.
-* **`Suricata_JSON_Parsing_Guide.md`**: Advanced JSON telemetry parsing and network event correlation using the `jq` command-line tool.
-* **`bootstrap.sh` & `audittool.sh`**: Bash scripts for provisioning SOC analysis environments and conducting Linux security audits.
+## 🧰 Topics and tools practised
+These are things I have actually used in the projects above (and nothing more):
 
-and more!
----
+- **Languages and scripting:** Python 3 (standard library, `re`), Bash, SQL (MariaDB/MySQL syntax)
+- **Linux:** command line, `grep`/pipes, permissions (`chmod`), users and groups, hashing (`sha256sum`, `cmp`, `od`), OpenSSL
+- **Network analysis:** Wireshark, tcpdump, Suricata (rules, `fast.log`, `eve.json`), `jq`
+- **Security operations:** alert triage, phishing analysis, IoC handling, ticketing and escalation, NIST incident response lifecycle
+- **GRC:** risk register and scoring, NIST CSF basics, post-incident reporting
 
-## 🛠️ Technical Skills & Tools Stack
-* **Languages & Scripting:** Python 3 (File I/O, RegEx, Data Structures, Automation), Bash, JavaScript.
-* **Security Operations:** SIEM Alert Triage, Vulnerability Management, Log Analysis, Phishing Analysis.
-* **Incident Response:** NIST IR Lifecycle, Root Cause Analysis (RCA), Threat Hunting, AI-Assisted Triage.
-* **Networking & Protocols:** TCP/IP, DNS, VPN, Firewalls, OSI Model, Zero-Trust Architecture.
-* **Compliance & Governance:** ISO 27001, Information Security Management Systems (ISMS), Risk Assessment.
+## 🗺️ Next on my list
+Add new labs as I finish them, and revisit older ones as I learn better ways to do them.
 
 ## 📬 Contact
-I am always open to learning and connecting with other cybersecurity professionals. Feel free to reach out to me!
+You can reach me through GitHub (issues, discussions or my profile). I'm happy to learn from people working in the field.
